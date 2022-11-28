@@ -21,10 +21,6 @@ const HomeWrapper = styled.div`
   padding: 30px;
 `;
 
-// const StyledButton = styled(Button)`
-//   /* width: 100%; */
-// `;
-
 const ButtonWrapper = styled.div`
   margin: 20px;
 `;
