@@ -6,11 +6,8 @@ module.exports = {
   // },
 
   // Lint & Prettify TS and JS files
-  '**/*.(ts|tsx|js)': (filenames) => [
-    `npx eslint ${filenames.join(' ')}`,
-    `npx prettier --write ${filenames.join(' ')}`,
-  ],
+  '**/*.(ts|tsx|js)': (filenames) => [`npx eslint ${filenames.join(' ')}`, `npm run prettier ${filenames.join(' ')}`],
 
   // Prettify only Markdown and JSON files
-  '**/*.(md|json)': (filenames) => `npx prettier --write ${filenames.join(' ')}`,
+  '**/*.(md|json)': (filenames) => `npm run prettier ${filenames.join(' ')}`,
 };
