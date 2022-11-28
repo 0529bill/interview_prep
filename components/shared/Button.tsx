@@ -1,22 +1,25 @@
 import { Button as AntdButton } from 'antd';
+import styled from 'styled-components';
+
+const StyledAntdButton = styled(AntdButton)`
+  margin: 20px;
+`;
 
 function Button({
   children,
-  shape = 'default',
-  size = 'middle',
-  block = false,
+  // shape = 'default',
+  // size = 'middle',
+  // block = false,
   ...props
 }: {
-  shape?: 'circle' | 'default' | 'round';
-  size?: 'large' | 'small' | 'middle';
-  block?: boolean | undefined;
+  // shape?: 'circle' | 'default' | 'round';
+  // size?: 'large' | 'small' | 'middle';
+  // block?: boolean | undefined;
   children?: React.ReactNode;
 }) {
   return (
     <>
-      <AntdButton type="primary" shape={shape} size={size} block={block} {...props}>
-        {children}
-      </AntdButton>
+      <StyledAntdButton {...props}>{children}</StyledAntdButton>
     </>
   );
 }

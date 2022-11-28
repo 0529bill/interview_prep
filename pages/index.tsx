@@ -21,9 +21,9 @@ const HomeWrapper = styled.div`
   padding: 30px;
 `;
 
-const StyledButton = styled(Button)`
-  /* width: 100%; */
-`;
+// const StyledButton = styled(Button)`
+//   /* width: 100%; */
+// `;
 
 const ButtonWrapper = styled.div`
   margin: 20px;
@@ -43,11 +43,11 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
         <HomeWrapper>
           <Title>Interview Prep</Title>
           <ButtonWrapper>
-            <StyledButton block>Sign In</StyledButton>
+            <Button>Sign In</Button>
           </ButtonWrapper>
           <ButtonWrapper>
             <Link href="/main/guest">
-              <StyledButton block>Guest</StyledButton>
+              <Button>Guest</Button>
             </Link>
           </ButtonWrapper>
         </HomeWrapper>

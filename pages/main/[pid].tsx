@@ -1,5 +1,6 @@
 import { Col, Row } from 'antd';
 
+import Button from '@/components/shared/Button';
 import Card from '@/components/shared/Card';
 import Title from '@/components/shared/Title';
 import styled from 'styled-components';
@@ -18,6 +19,11 @@ const CardWrapper = styled.div`
   margin: 30px;
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const MainPage: React.FC = () => {
   const router = useRouter();
   const { pid } = router.query;
@@ -32,7 +38,7 @@ const MainPage: React.FC = () => {
       <CardWrapper className="site-card-wrapper">
         <Row gutter={[16, 16]}>
           <Col md={8} span={24}>
-            <Card title="Card title" bordered={false}>
+            <Card title="Card title" bordered={false} hoverable={true}>
               Card content
             </Card>
           </Col>
@@ -93,6 +99,10 @@ const MainPage: React.FC = () => {
           </Col>
         </Row>
       </CardWrapper>
+      <ButtonWrapper>
+        <Button>Previous</Button>
+        <Button>Next</Button>
+      </ButtonWrapper>
     </MainContainer>
   );
 };
