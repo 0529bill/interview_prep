@@ -9,7 +9,7 @@ module.exports = {
   // '**/*.(ts|tsx|js)': (filenames) => [`npx eslint . --max-warnings=0 `, `npm run prettier ${filenames.join(' ')}`],
 
   '**/*.(ts|tsx|js)': (filenames) => [
-    `npx eslint --ext=ts,tsx --exit-on-fatal-error `,
+    `npx eslint . --ext=ts,tsx,js  --exit-on-fatal-error `,
     `npm run prettier ${filenames.join(' ')}`,
   ],
 
