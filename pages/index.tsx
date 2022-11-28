@@ -1,7 +1,7 @@
 import Button from '@/components/shared/Button';
 import Head from 'next/head';
 import { InferGetServerSidePropsType } from 'next';
-import Link from 'next/link';
+import Link from '@/components/shared/Link';
 import Title from '@/components/shared/Title';
 import clientPromise from '../lib/mongodb';
 import styled from 'styled-components';
@@ -19,10 +19,22 @@ const HomeWrapper = styled.div`
   border: 5px black solid;
   text-align: center;
   padding: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const ButtonWrapper = styled.div`
-  margin: 20px;
+  /* margin: 20px; */
+  /* display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 150px; */
+`;
+
+const StyledButton = styled(Button)`
+  max-width: 300px;
+  width: 100%;
 `;
 
 export default function Home({ isConnected }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -39,11 +51,13 @@ export default function Home({ isConnected }: InferGetServerSidePropsType<typeof
         <HomeWrapper>
           <Title>Interview Prep</Title>
           <ButtonWrapper>
-            <Button>Sign In</Button>
+            <Link href="/signIn">
+              <StyledButton>Sign In</StyledButton>
+            </Link>
           </ButtonWrapper>
           <ButtonWrapper>
             <Link href="/main/guest">
-              <Button>Guest</Button>
+              <StyledButton>Guest</StyledButton>
             </Link>
           </ButtonWrapper>
         </HomeWrapper>

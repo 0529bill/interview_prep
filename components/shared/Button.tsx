@@ -5,18 +5,7 @@ const StyledAntdButton = styled(AntdButton)`
   margin: 20px;
 `;
 
-function Button({
-  children,
-  // shape = 'default',
-  // size = 'middle',
-  // block = false,
-  ...props
-}: {
-  // shape?: 'circle' | 'default' | 'round';
-  // size?: 'large' | 'small' | 'middle';
-  // block?: boolean | undefined;
-  children?: React.ReactNode;
-}) {
+function Button({ children, ...props }: { children?: React.ReactNode }) {
   return (
     <>
       <StyledAntdButton {...props}>{children}</StyledAntdButton>

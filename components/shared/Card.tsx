@@ -8,7 +8,18 @@ const StyledAntdCard = styled(AntdCard)`
   background-color: ${({ cardClicked }) => (cardClicked ? 'aliceblue' : null)};
 `;
 
-function Card({ size, hoverable = true, ...props }: { size?: string; hoverable?: boolean }) {
+const StyledDiv = styled.div``;
+
+function Card({
+  questionNum,
+  size,
+  hoverable = true,
+  ...props
+}: {
+  questionNum: number;
+  size?: string;
+  hoverable?: boolean;
+}) {
   const [cardClicked, setCardClicked] = useState(false);
 
   const handleOnClick = () => {
@@ -36,13 +47,9 @@ function Card({ size, hoverable = true, ...props }: { size?: string; hoverable?:
   }
 
   return (
-    <StyledAntdCard
-      onClick={handleOnClick}
-      height={height}
-      hoverable={hoverable}
-      cardClicked={cardClicked}
-      {...props}
-    />
+    <StyledAntdCard onClick={handleOnClick} height={height} hoverable={hoverable} cardClicked={cardClicked} {...props}>
+      <StyledDiv>total questions: {questionNum}</StyledDiv>
+    </StyledAntdCard>
   );
 }
 
