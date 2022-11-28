@@ -5,8 +5,13 @@ module.exports = {
   //   return 'npx tsc --noEmit';
   // },
 
-  // Lint & Prettify TS and JS files
-  '**/*.(ts|tsx|js)': (filenames) => [`npx eslint . --max-warnings=0 `, `npm run prettier ${filenames.join(' ')}`],
+  // no warnings allowed
+  // '**/*.(ts|tsx|js)': (filenames) => [`npx eslint . --max-warnings=0 `, `npm run prettier ${filenames.join(' ')}`],
+
+  '**/*.(ts|tsx|js)': (filenames) => [
+    `npx eslint --ext=ts,tsx --exit-on-fatal-error `,
+    `npm run prettier ${filenames.join(' ')}`,
+  ],
 
   // Prettify only Markdown and JSON files
   '**/*.(md|json)': (filenames) => `npm run prettier ${filenames.join(' ')}`,

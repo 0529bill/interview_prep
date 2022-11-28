@@ -34,7 +34,6 @@ const MainPage: React.FC = () => {
       <TitleWrapper>
         <Title level={2}>Main Page</Title>
       </TitleWrapper>
-
       <CardWrapper className="site-card-wrapper">
         <Row gutter={[16, 16]}>
           <Col md={8} span={24}>
