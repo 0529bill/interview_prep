@@ -1,14 +1,8 @@
 {
-<<<<<<< HEAD
-=======
-  "name": "interview_prep",
-  "version": "0.1.0",
->>>>>>> Initial commit from Create Next App
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-<<<<<<< HEAD
     "start": "next start"
   },
   "dependencies": {
@@ -20,8 +14,7 @@
   "devDependencies": {
     "@types/node": "18.7.5",
     "@types/react": "16.9.17",
-    "typescript": "4.6.3"
-=======
+    "typescript": "4.6.3",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
@@ -42,9 +35,6 @@
     "react-dom": "18.2.0",
     "styled-components": "^5.3.6",
     "typescript": "4.9.3"
-<<<<<<< HEAD
->>>>>>> Initial commit from Create Next App
-=======
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.44.0",
@@ -52,6 +42,5 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.0.4",
     "prettier": "^2.8.0"
->>>>>>> feat: init
   }
 }
