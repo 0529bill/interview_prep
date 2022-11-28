@@ -31,6 +31,7 @@
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
+    "@types/styled-components": "^5.1.26",
     "antd": "^5.0.1",
     "axios": "^1.2.0",
     "eslint": "8.28.0",
