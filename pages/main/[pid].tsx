@@ -34,21 +34,35 @@ const MainPage: React.FC = () => {
 	const router = useRouter()
 	const { pid } = router.query
 
-	const [currentCategory, setCurrentCategory] = useState([])
+	// const [currentCategory, setCurrentCategory] = useState([])
+	const [isJSSelected, setJSSelected] = useState(false)
+	const [isReactSelected, setReactSelected] = useState(false)
+	const [isWebSelected, setWebSelected] = useState(false)
 
-	const handleNextButton = () => {
-		setLocalStorage(localStorageKey, currentCategory)
+	const handleNextButton = (e) => {
+		const currentCategory = []
+		console.log('isJSSelected', isJSSelected)
+		console.log('isReactSelected', isReactSelected)
+		console.log('isWebSelected', isWebSelected)
+		console.log('Category', Category)
+		if (isJSSelected) {
+			currentCategory.push(Category.JAVASCRIPT)
+		}
+		if (isReactSelected) {
+			currentCategory.push(Category.REACT)
+		}
+
+		if (isWebSelected) {
+			currentCategory.push(Category.WEB)
+		}
+
+		console.log('currentCategory', currentCategory)
+		if (currentCategory.length > 0) {
+			setLocalStorage(localStorageKey, currentCategory)
+			router.push('/scrollCard')
+		}
 	}
 
-	const handleCardClicked = (category) => {
-		console.log('category', category)
-		setCurrentCategory((t) => {
-			t.push(category)
-			return t
-		})
-	}
-
-	console.log('currentCategory', currentCategory)
 	return (
 		<MainContainer>
 			<TitleWrapper>
@@ -58,7 +72,8 @@ const MainPage: React.FC = () => {
 				<Row gutter={[32, 32]}>
 					<Col md={8} span={24}>
 						<Card
-							onClick={() => handleCardClicked(Category.JAVASCRIPT)}
+							isSelected={isJSSelected}
+							onClick={() => setJSSelected((t) => !t)}
 							title="Javascript"
 							bordered={false}
 							hoverable={true}
@@ -66,12 +81,22 @@ const MainPage: React.FC = () => {
 						/>
 					</Col>
 					<Col md={8} span={24}>
-						<Card title="Card title" onClick={() => handleCardClicked(Category.REACT)} bordered={false}>
+						<Card
+							isSelected={isReactSelected}
+							title="Card title"
+							onClick={() => setReactSelected((t) => !t)}
+							bordered={false}
+						>
 							React
 						</Card>
 					</Col>
 					<Col md={8} span={24}>
-						<Card title="Card title" onClick={handleCardClicked} bordered={false}>
+						<Card
+							isSelected={isWebSelected}
+							title="Card title"
+							onClick={() => setWebSelected((t) => !t)}
+							bordered={false}
+						>
 							Card content
 						</Card>
 					</Col>
@@ -82,7 +107,7 @@ const MainPage: React.FC = () => {
 					<Link href="/">Previous</Link>
 				</Button>
 				<Button size="large" onClick={handleNextButton}>
-					<Link href="/scrollCard">Next</Link>
+					<Link href="{}">Next</Link>
 				</Button>
 			</ButtonWrapper>
 		</MainContainer>

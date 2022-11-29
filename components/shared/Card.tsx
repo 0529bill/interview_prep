@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const StyledAntdCard = styled(AntdCard)`
 	height: ${({ height }) => height};
-	background-color: ${({ cardClicked }) => (cardClicked ? 'aliceblue' : null)};
+	background-color: ${({ isSelected }) => (isSelected ? 'aliceblue' : null)};
 `
 
 const StyledDiv = styled.div``
@@ -13,11 +13,13 @@ const StyledDiv = styled.div``
 function Card({
 	questionNum,
 	size,
+	isSelected,
 	hoverable = true,
 	...props
 }: {
 	questionNum: number
 	size?: string
+	isSelected?: boolean
 	hoverable?: boolean
 }) {
 	const [cardClicked, setCardClicked] = useState(false)
@@ -49,6 +51,7 @@ function Card({
 	return (
 		<StyledAntdCard
 			onClick={handleOnClick}
+			isSelected={isSelected}
 			height={height}
 			hoverable={hoverable}
 			cardClicked={cardClicked}

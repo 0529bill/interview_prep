@@ -7,6 +7,7 @@ import { database } from '../database'
 import { localStorageKey } from '../lib/constants'
 import styled from 'styled-components'
 import { useEffect } from 'react'
+import { useState } from 'react'
 
 const ScrollCardContainer = styled.div`
 	margin: 30px;
@@ -31,10 +32,31 @@ const CardWrapper = styled.div`
 const IconWrapper = styled.div``
 
 function ScrollCard() {
+	const [storageData, setStorageData] = useState([])
+	const [currentCardIndex, setCurrentCardIndex] = useState(false)
+	const [maxCardIndex, setMaxCardIndex] = useState(false)
+
+	const handleChangeCard = (arrowDirection: string) => {
+		if (arrowDirection === 'left') {
+			if (currentCardIndex === 0) {
+				return
+			}
+			setCurrentCardIndex((t) => t - 1)
+		} else if (arrowDirection === 'right') {
+			if (currentCardIndex >= maxCardIndex) {
+				setCurrentCardIndex((t) => t + 1)
+			}
+		}
+	}
+
 	useEffect(() => {
-		const a = getLocalStorage(localStorageKey)
-		console.log('a', a)
-	})
+		const fetchedData = getLocalStorage(localStorageKey)
+		if (fetchedData.length > 0) {
+			setStorageData(fetchedData)
+			setCurrentCardIndex(0)
+			setMaxCardIndex(fetchedData.length - 1)
+		}
+	}, [setStorageData])
 
 	return (
 		<ScrollCardContainer>
@@ -42,9 +64,9 @@ function ScrollCard() {
 				<Title>Scroll</Title>
 			</TitleWrapper>
 			<CardWrapper>
-				<CaretLeftOutlined onClick={() => alert('hah')} style={{ fontSize: '3rem' }} />
-				<ScrollComponent data />
-				<CaretRightOutlined style={{ fontSize: '3rem' }} />
+				<CaretLeftOutlined onClick={() => handleChangeCard('left')} style={{ fontSize: '3rem' }} />
+				<ScrollComponent data={storageData[currentCardIndex]} />
+				<CaretRightOutlined onClick={() => handleChangeCard('right')} style={{ fontSize: '3rem' }} />
 			</CardWrapper>
 			<IconWrapper></IconWrapper>
 		</ScrollCardContainer>
