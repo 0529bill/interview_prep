@@ -1,12 +1,12 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next'
 
-import database from '@/middleware';
-import nc from 'next-connect';
+import database from '@/middleware'
+import nc from 'next-connect'
 
-const handler = nc<NextApiRequest, NextApiResponse>();
+const handler = nc<NextApiRequest, NextApiResponse>()
 
-console.log('database', database);
-handler.use(database);
+console.log('database', database)
+handler.use(database)
 
 // handler.get(async (req, res) => {
 //   console.log('req', req);
