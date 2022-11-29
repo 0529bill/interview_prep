@@ -1,6 +1,10 @@
 import styled, { css } from 'styled-components'
 
-const StyledText = styled.p`
+interface textProps {
+	level: number | undefined
+}
+
+const StyledText = styled.p<textProps>`
 	${({ level }) => {
 		switch (level) {
 			case 1:

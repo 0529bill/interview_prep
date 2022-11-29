@@ -10,4 +10,11 @@ function getLocalStorage(dataName: string) {
 	return JSON.parse(retrievedData)
 }
 
-export { setLocalStorage, getLocalStorage }
+function shuffleArray(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1))
+		;[array[i], array[j]] = [array[j], array[i]]
+	}
+}
+
+export { setLocalStorage, getLocalStorage, shuffleArray }

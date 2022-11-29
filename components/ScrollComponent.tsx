@@ -4,6 +4,15 @@ import Button from '@/components/shared/Button'
 import Title from '@/components/shared/Title'
 import { useState } from 'react'
 
+interface CardWrapperProps {
+	frontClicked: boolean
+	backClicked: boolean
+}
+
+interface StyledButtonProps {
+	onClick: React.MouseEventHandler
+}
+
 const CardContainer = styled.div`
 	background-color: transparent;
 	width: 500px;
@@ -11,7 +20,7 @@ const CardContainer = styled.div`
 	perspective: 1000px;
 `
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.div<CardWrapperProps>`
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -66,7 +75,7 @@ const HintsWrapper = styled.div`
 	margin-top: 5rem;
 `
 
-const StyledButton = styled(Button)`
+const StyledButton = styled(Button)<StyledButtonProps>`
 	width: 100%;
 	max-width: 250px;
 	height: 4rem;
@@ -87,7 +96,16 @@ const StyledButton = styled(Button)`
 	}
 `
 
-function ScrollComponent(data) {
+function ScrollComponent({
+	data: { category, question, hints, answer },
+}: {
+	data: {
+		category: string
+		question: string
+		hints: string
+		answer: string
+	}
+}) {
 	const [frontClicked, setFrontClicked] = useState(false)
 	const [backClicked, setBackClicked] = useState(false)
 	const [showHints, setShowHints] = useState(false)
@@ -96,6 +114,10 @@ function ScrollComponent(data) {
 		e.stopPropagation()
 		setShowHints((t) => !t)
 	}
+	console.log('category', category)
+	console.log('question', question)
+	console.log('hints', hints)
+	console.log('answer', answer)
 	return (
 		<CardContainer>
 			<CardWrapper frontClicked={frontClicked} backClicked={backClicked}>
@@ -104,17 +126,16 @@ function ScrollComponent(data) {
 						setFrontClicked(true)
 						setBackClicked(false)
 					}}
-					frontClicked={frontClicked}
 				>
-					<Title>Category: {}</Title>
+					<Title>Category: {category}</Title>
 					<QuestionWrapper>
-						<Title level={3}>Questions:</Title>
+						<Title level={2}>question: {question}</Title>
 					</QuestionWrapper>
 					<HintsWrapper>
 						<StyledButton onClick={handleHintsClicked}>
 							<Title level={3}>hints</Title>
 						</StyledButton>
-						{showHints && <Title level={3}>{'hi'}</Title>}
+						{showHints && <Title level={3}>{hints}</Title>}
 					</HintsWrapper>
 				</FrontSide>
 				<BackSide
@@ -123,10 +144,9 @@ function ScrollComponent(data) {
 						setFrontClicked(false)
 						setShowHints(false)
 					}}
-					backClicked={backClicked}
 				>
-					<Title level={3}>Questions: </Title>
-					<Title level={3}>Answer</Title>
+					<Title level={3}>question: {question}</Title>
+					<Title level={3}>Answer: {answer}</Title>
 				</BackSide>
 			</CardWrapper>
 		</CardContainer>

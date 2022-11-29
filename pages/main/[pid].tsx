@@ -41,10 +41,7 @@ const MainPage: React.FC = () => {
 
 	const handleNextButton = (e) => {
 		const currentCategory = []
-		console.log('isJSSelected', isJSSelected)
-		console.log('isReactSelected', isReactSelected)
-		console.log('isWebSelected', isWebSelected)
-		console.log('Category', Category)
+
 		if (isJSSelected) {
 			currentCategory.push(Category.JAVASCRIPT)
 		}

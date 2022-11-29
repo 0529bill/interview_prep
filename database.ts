@@ -2,42 +2,30 @@
 export const database = [
 	{
 		category: 'Javascript',
-		questions: [
-			{
-				question: 'What is closure?',
-				hints: 'lexical Environment',
-				ans: '',
-			},
-		],
+		categoryId: 1,
+		question: 'What is closure?',
+		hints: 'lexical Environment',
+		ans: '',
 	},
 	{
 		category: 'Javascript',
-		questions: [
-			{
-				question: 'What is eventLoop?',
-				hints: 'callStack, callbackQueue, microTask, macroTask',
-				ans: '',
-			},
-		],
+		categoryId: 1,
+		question: 'What is eventLoop?',
+		hints: 'callStack, callbackQueue, microTask, macroTask',
+		ans: '',
 	},
 	{
 		category: 'Javascript',
-		questions: [
-			{
-				question: 'What is event delegation? e.stopPropagation vs e.preventDefault?',
-				hints: '',
-				ans: '',
-			},
-		],
+		categoryId: 1,
+		question: 'What is event delegation? e.stopPropagation vs e.preventDefault?',
+		hints: 'bubbling, capturing',
+		ans: '',
 	},
 	{
 		category: 'Javascript',
-		questions: [
-			{
-				question: 'let, const and var?',
-				hints: 'function scope, block scope, IIFE',
-				ans: '',
-			},
-		],
+		categoryId: 1,
+		question: 'let, const and var?',
+		hints: 'function scope, block scope, IIFE',
+		ans: '',
 	},
 ]
