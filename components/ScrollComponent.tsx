@@ -78,7 +78,7 @@ const HintsWrapper = styled.div`
 const StyledButton = styled(Button)<StyledButtonProps>`
 	width: 100%;
 	max-width: 250px;
-	height: 4rem;
+	height: 100%;
 	background-color: transparent;
 	border: 3px solid #5e5e5e;
 	font-weight: bold;
@@ -91,7 +91,7 @@ const StyledButton = styled(Button)<StyledButtonProps>`
 	@media screen and (max-width: 425px) {
 		font-size: 0.875rem;
 		margin: 0px;
-		height: 2rem;
+		height: 100%;
 		max-width: 100px;
 	}
 `

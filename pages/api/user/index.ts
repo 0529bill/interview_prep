@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import database from '@/middleware'
+import { database } from '@/middleware/index'
 import nc from 'next-connect'
 
 const handler = nc<NextApiRequest, NextApiResponse>()

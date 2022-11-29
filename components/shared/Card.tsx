@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const StyledAntdCard = styled(AntdCard)`
 	height: ${({ height }) => height};
-	background-color: ${({ isSelected }) => (isSelected ? 'aliceblue' : null)};
+	background-color: ${({ isSelected }) => (isSelected ? '#cae2f7' : null)};
 `
 
 const StyledDiv = styled.div``

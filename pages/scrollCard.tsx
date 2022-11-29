@@ -30,8 +30,6 @@ const CardWrapper = styled.div`
 	height: 100%;
 `
 
-const IconWrapper = styled.div``
-
 function ScrollCard() {
 	const router = useRouter()
 	const [storageData, setStorageData] = useState([])
@@ -77,7 +75,6 @@ function ScrollCard() {
 				<ScrollComponent data={currentCardIndex !== null && storageData[currentCardIndex]} />
 				<CaretRightOutlined onClick={() => handleChangeCard('right')} style={{ fontSize: '3rem' }} />
 			</CardWrapper>
-			<IconWrapper></IconWrapper>
 		</ScrollCardContainer>
 	)
 }

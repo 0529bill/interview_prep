@@ -14,6 +14,10 @@ import { useState } from 'react'
 const MainContainer = styled.div`
 	width: 100%;
 	padding: 0px 150px;
+
+	@media (max-width: 768px) {
+		padding: 0px 0px;
+	}
 `
 
 const TitleWrapper = styled.div`
@@ -80,22 +84,18 @@ const MainPage: React.FC = () => {
 					<Col md={8} span={24}>
 						<Card
 							isSelected={isReactSelected}
-							title="Card title"
+							title="React"
 							onClick={() => setReactSelected((t) => !t)}
 							bordered={false}
-						>
-							React
-						</Card>
+						/>
 					</Col>
 					<Col md={8} span={24}>
 						<Card
 							isSelected={isWebSelected}
-							title="Card title"
+							title="Preparing..."
 							onClick={() => setWebSelected((t) => !t)}
 							bordered={false}
-						>
-							Card content
-						</Card>
+						/>
 					</Col>
 				</Row>
 			</CardWrapper>
