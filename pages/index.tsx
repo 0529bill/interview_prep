@@ -25,11 +25,7 @@ const HomeWrapper = styled.div`
 `
 
 const ButtonWrapper = styled.div`
-	/* margin: 20px; */
-	/* display: flex;
-  justify-content: center;
-  width: 100%;
-  max-width: 150px; */
+	padding: 20px;
 `
 
 const StyledButton = styled(Button)`

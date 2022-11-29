@@ -1,5 +1,5 @@
 import { CaretLeftOutlined, CaretRightOutlined } from '@ant-design/icons'
-import { getLocalStorage, setLocalStorage, shuffleArray } from '@/utils/index'
+import { getLocalStorage, shuffleArray } from '@/utils/index'
 
 import ScrollComponent from '@/components/ScrollComponent'
 import Title from '@/components/shared/Title'
@@ -44,7 +44,7 @@ function ScrollCard() {
 			}
 			setCurrentCardIndex((t) => t - 1)
 		} else if (arrowDirection === 'right') {
-			if (currentCardIndex <= maxCardIndex) {
+			if (currentCardIndex < maxCardIndex) {
 				setCurrentCardIndex((t) => t + 1)
 			} else {
 				alert('reach the end of the card')
@@ -61,7 +61,7 @@ function ScrollCard() {
 			shuffleArray(selectedData)
 			setStorageData(selectedData)
 			setCurrentCardIndex(0)
-			setMaxCardIndex(fetchedCategory.length - 1)
+			setMaxCardIndex(selectedData.length - 1)
 		}
 	}, [setStorageData])
 

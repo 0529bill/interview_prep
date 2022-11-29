@@ -72,7 +72,7 @@ const QuestionWrapper = styled.div`
 
 const HintsWrapper = styled.div`
 	padding: 10px;
-	margin-top: 5rem;
+	margin-top: 16px;
 `
 
 const StyledButton = styled(Button)<StyledButtonProps>`
@@ -114,10 +114,7 @@ function ScrollComponent({
 		e.stopPropagation()
 		setShowHints((t) => !t)
 	}
-	console.log('category', category)
-	console.log('question', question)
-	console.log('hints', hints)
-	console.log('answer', answer)
+
 	return (
 		<CardContainer>
 			<CardWrapper frontClicked={frontClicked} backClicked={backClicked}>
