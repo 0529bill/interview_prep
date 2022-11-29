@@ -1,37 +1,38 @@
 {
-  "name": "interview_prep",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
-    "prepare": "husky install"
-  },
-  "dependencies": {
-    "@types/node": "18.11.9",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.9",
-    "@types/styled-components": "^5.1.26",
-    "antd": "^5.0.1",
-    "axios": "^1.2.0",
-    "eslint": "8.28.0",
-    "eslint-config-next": "13.0.5",
-    "mongodb": "^4.12.1",
-    "next": "13.0.5",
-    "next-connect": "^0.13.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "styled-components": "^5.3.6",
-    "typescript": "4.9.3"
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.44.0",
-    "eslint-config-prettier": "^8.5.0",
-    "husky": "^8.0.0",
-    "lint-staged": "^13.0.4",
-    "prettier": "^2.8.0"
-  }
+	"name": "interview_prep",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"prettier": "prettier '**/*.{js,jsx,ts,tsx}' --write",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"@ant-design/icons": "^4.8.0",
+		"@types/node": "18.11.9",
+		"@types/react": "18.0.25",
+		"@types/react-dom": "18.0.9",
+		"@types/styled-components": "^5.1.26",
+		"antd": "^5.0.1",
+		"axios": "^1.2.0",
+		"eslint": "8.28.0",
+		"eslint-config-next": "13.0.5",
+		"mongodb": "^4.12.1",
+		"next": "13.0.5",
+		"next-connect": "^0.13.0",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"styled-components": "^5.3.6",
+		"typescript": "4.9.3"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.44.0",
+		"eslint-config-prettier": "^8.5.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.0.4",
+		"prettier": "^2.8.0"
+	}
 }
