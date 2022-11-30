@@ -35,6 +35,7 @@ function ScrollCard() {
 	const [storageData, setStorageData] = useState([])
 	const [currentCardIndex, setCurrentCardIndex] = useState(null)
 	const [maxCardIndex, setMaxCardIndex] = useState(null)
+	const [indexChanged, setIndexChanged] = useState(false)
 
 	const handleChangeCard = (arrowDirection: string) => {
 		if (currentCardIndex == null) return
@@ -51,11 +52,11 @@ function ScrollCard() {
 				router.push('/')
 			}
 		}
+		setIndexChanged(true)
 	}
 
 	useEffect(() => {
 		const fetchedCategory = getLocalStorage(localStorageKey)
-		console.log('fetchedData', fetchedCategory)
 		if (fetchedCategory.length > 0) {
 			const selectedData = database.filter((data) => fetchedCategory.includes(data.categoryId))
 			shuffleArray(selectedData)
@@ -72,7 +73,15 @@ function ScrollCard() {
 			</TitleWrapper>
 			<CardWrapper>
 				<CaretLeftOutlined onClick={() => handleChangeCard('left')} style={{ fontSize: '3rem' }} />
-				<ScrollComponent data={currentCardIndex !== null && storageData[currentCardIndex]} />
+				{currentCardIndex !== null ? (
+					<ScrollComponent
+						data={storageData[currentCardIndex]}
+						indexChanged={indexChanged}
+						setIndexChanged={setIndexChanged}
+					/>
+				) : (
+					' no Data'
+				)}
 				<CaretRightOutlined onClick={() => handleChangeCard('right')} style={{ fontSize: '3rem' }} />
 			</CardWrapper>
 		</ScrollCardContainer>

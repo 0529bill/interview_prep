@@ -1,8 +1,8 @@
+import { Dispatch, useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 
 import Button from '@/components/shared/Button'
 import Title from '@/components/shared/Title'
-import { useState } from 'react'
 
 interface CardWrapperProps {
 	frontClicked: boolean
@@ -98,6 +98,8 @@ const StyledButton = styled(Button)<StyledButtonProps>`
 
 function ScrollComponent({
 	data: { category, question, hints, answer },
+	indexChanged,
+	setIndexChanged,
 }: {
 	data: {
 		category: string
@@ -105,6 +107,9 @@ function ScrollComponent({
 		hints: string
 		answer: string
 	}
+
+	indexChanged: boolean
+	setIndexChanged: Dispatch<boolean>
 }) {
 	const [frontClicked, setFrontClicked] = useState(false)
 	const [backClicked, setBackClicked] = useState(false)
@@ -114,6 +119,15 @@ function ScrollComponent({
 		e.stopPropagation()
 		setShowHints((t) => !t)
 	}
+
+	useEffect(() => {
+		if (indexChanged) {
+			setIndexChanged(false)
+			setBackClicked(true)
+			setFrontClicked(false)
+			setShowHints(false)
+		}
+	}, [indexChanged, setIndexChanged])
 
 	return (
 		<CardContainer>

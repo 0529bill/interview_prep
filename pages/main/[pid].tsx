@@ -57,7 +57,6 @@ const MainPage: React.FC = () => {
 			currentCategory.push(Category.WEB)
 		}
 
-		console.log('currentCategory', currentCategory)
 		if (currentCategory.length > 0) {
 			setLocalStorage(localStorageKey, currentCategory)
 			router.push('/scrollCard')
