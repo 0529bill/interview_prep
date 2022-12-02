@@ -49,6 +49,14 @@ export const database = [
 		categoryId: 1,
 		question: 'prototype?',
 		hints: 'prototype inheritance',
-		answer: 'null',
+		answer: 'Every object has a inner object called prototype, it allows us to "inherit" or gain access to its parents method. By having prototype inheritance, developer can inherit methods from upper prototype thus can reduce amount of code to write.',
+	},
+
+	{
+		category: 'Javascript',
+		categoryId: 1,
+		question: 'Functional programming?',
+		hints: 'Pure function, Immutability, higher-order function, Currying, no side Effects',
+		answer: '',
 	},
 ]
